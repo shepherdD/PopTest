@@ -36,9 +36,10 @@
 		84BE4A2F1D34E6DA0088D351 /* POPSpringAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4A131D34E6DA0088D351 /* POPSpringAnimation.mm */; };
 		84BE4A301D34E6DA0088D351 /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4A171D34E6DA0088D351 /* POPVector.mm */; };
 		84BE4A311D34E6DA0088D351 /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4A1A1D34E6DA0088D351 /* TransformationMatrix.cpp */; };
-		84BE4AD21D34FE780088D351 /* ChatRoomAnim.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4AD11D34FE780088D351 /* ChatRoomAnim.m */; };
 		84BE4AD71D3500240088D351 /* 111@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4AD51D3500240088D351 /* 111@2x.png */; };
 		84BE4AD81D3500240088D351 /* 222@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4AD61D3500240088D351 /* 222@2x.png */; };
+		84BE4AE11D35052C0088D351 /* PopTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4AE01D35052C0088D351 /* PopTestView.m */; };
+		84BE4AE41D3505390088D351 /* PopTestAnim.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4AE31D3505390088D351 /* PopTestAnim.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,10 +131,12 @@
 		84BE4A1A1D34E6DA0088D351 /* TransformationMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformationMatrix.cpp; sourceTree = "<group>"; };
 		84BE4A1B1D34E6DA0088D351 /* TransformationMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformationMatrix.h; sourceTree = "<group>"; };
 		84BE4A1C1D34E6DA0088D351 /* UnitBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitBezier.h; sourceTree = "<group>"; };
-		84BE4AD01D34FE780088D351 /* ChatRoomAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomAnim.h; sourceTree = "<group>"; };
-		84BE4AD11D34FE780088D351 /* ChatRoomAnim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomAnim.m; sourceTree = "<group>"; };
 		84BE4AD51D3500240088D351 /* 111@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111@2x.png"; sourceTree = "<group>"; };
 		84BE4AD61D3500240088D351 /* 222@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "222@2x.png"; sourceTree = "<group>"; };
+		84BE4ADF1D35052C0088D351 /* PopTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopTestView.h; sourceTree = "<group>"; };
+		84BE4AE01D35052C0088D351 /* PopTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopTestView.m; sourceTree = "<group>"; };
+		84BE4AE21D3505390088D351 /* PopTestAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopTestAnim.h; sourceTree = "<group>"; };
+		84BE4AE31D3505390088D351 /* PopTestAnim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopTestAnim.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,18 +188,14 @@
 		84BE49B01D34E6C00088D351 /* PopTest */ = {
 			isa = PBXGroup;
 			children = (
-				84BE4AD51D3500240088D351 /* 111@2x.png */,
-				84BE4AD61D3500240088D351 /* 222@2x.png */,
 				84BE49B41D34E6C00088D351 /* AppDelegate.h */,
 				84BE49B51D34E6C00088D351 /* AppDelegate.m */,
 				84BE49B71D34E6C00088D351 /* ViewController.h */,
 				84BE49B81D34E6C00088D351 /* ViewController.m */,
-				84BE4AD01D34FE780088D351 /* ChatRoomAnim.h */,
-				84BE4AD11D34FE780088D351 /* ChatRoomAnim.m */,
-				84BE49BA1D34E6C00088D351 /* Main.storyboard */,
-				84BE49BD1D34E6C00088D351 /* Assets.xcassets */,
-				84BE49BF1D34E6C00088D351 /* LaunchScreen.storyboard */,
-				84BE49C21D34E6C00088D351 /* Info.plist */,
+				84BE4ADF1D35052C0088D351 /* PopTestView.h */,
+				84BE4AE01D35052C0088D351 /* PopTestView.m */,
+				84BE4AE21D3505390088D351 /* PopTestAnim.h */,
+				84BE4AE31D3505390088D351 /* PopTestAnim.m */,
 				84BE49B11D34E6C00088D351 /* Supporting Files */,
 			);
 			path = PopTest;
@@ -205,6 +204,12 @@
 		84BE49B11D34E6C00088D351 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84BE4AD51D3500240088D351 /* 111@2x.png */,
+				84BE4AD61D3500240088D351 /* 222@2x.png */,
+				84BE49BD1D34E6C00088D351 /* Assets.xcassets */,
+				84BE49BF1D34E6C00088D351 /* LaunchScreen.storyboard */,
+				84BE49C21D34E6C00088D351 /* Info.plist */,
+				84BE49BA1D34E6C00088D351 /* Main.storyboard */,
 				84BE49B21D34E6C00088D351 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -436,8 +441,8 @@
 			files = (
 				84BE49B91D34E6C00088D351 /* ViewController.m in Sources */,
 				84BE4A241D34E6DA0088D351 /* POPAnimationRuntime.mm in Sources */,
+				84BE4AE11D35052C0088D351 /* PopTestView.m in Sources */,
 				84BE4A301D34E6DA0088D351 /* POPVector.mm in Sources */,
-				84BE4AD21D34FE780088D351 /* ChatRoomAnim.m in Sources */,
 				84BE4A211D34E6DA0088D351 /* POPAnimation.mm in Sources */,
 				84BE4A251D34E6DA0088D351 /* POPAnimationTracer.mm in Sources */,
 				84BE49B61D34E6C00088D351 /* AppDelegate.m in Sources */,
@@ -446,6 +451,7 @@
 				84BE4A231D34E6DA0088D351 /* POPAnimationExtras.mm in Sources */,
 				84BE4A221D34E6DA0088D351 /* POPAnimationEvent.mm in Sources */,
 				84BE4A201D34E6DA0088D351 /* POPAnimatableProperty.mm in Sources */,
+				84BE4AE41D3505390088D351 /* PopTestAnim.m in Sources */,
 				84BE4A261D34E6DA0088D351 /* POPAnimator.mm in Sources */,
 				84BE4A2A1D34E6DA0088D351 /* POPDecayAnimation.mm in Sources */,
 				84BE4A2F1D34E6DA0088D351 /* POPSpringAnimation.mm in Sources */,
@@ -598,7 +604,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PopTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.PopTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -611,7 +617,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PopTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.PopTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

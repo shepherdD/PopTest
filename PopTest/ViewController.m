@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "PopTestView.h"
 
 @interface ViewController ()
+
+//@property (strong, nonatomic) PopTestView *contentView;
 
 @end
 
@@ -18,7 +21,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 100, 100, 100);
+    btn.backgroundColor = [UIColor blueColor];
+    btn.titleLabel.text = @"开始";
+    [btn  addTarget:self action:@selector(statAnim) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)statAnim
+{
+//    if (self.contentView == nil) {
+        PopTestView *contentView = [[PopTestView alloc] init];
+        [self.view addSubview:contentView];
+//    }
+    [contentView startAnim];
 }
 
 - (void)didReceiveMemoryWarning {
