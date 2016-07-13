@@ -17,6 +17,7 @@
 @property (nonatomic) CALayer * bgBtnLayer;
 @property (nonatomic) CALayer * imgLayer;
 @property (nonatomic) CALayer * countLabelLayer;
+@property (nonatomic) BOOL isAnimStarted;
 
 @end
 
@@ -119,15 +120,22 @@
     anim.toValue = [NSValue valueWithCGSize:CGSizeMake(1, 1)];
     anim.completionBlock =  ^(POPAnimation *anim, BOOL finished) {
         if (finished) {
-            [self startContentViewAnim];
+            [self delayStartContentViewAnim];
         }
     };
     [self.countLabelLayer pop_addAnimation:anim forKey:@"positionX"];
 }
 
+- (void)delayStartContentViewAnim
+{
+    [self performSelector:@selector(startContentViewAnim) withObject:nil afterDelay:2.0];
+}
+
 - (void)startContentViewAnim
 {
-    [UIView animateWithDuration:1 delay:2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(startContentViewAnim) object:nil];
+    self.isAnimStarted = YES;
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-self.bounds.size.height - 20, self.bounds.size.width, self.bounds.size.height);
         self.alpha = 0;
     } completion:^(BOOL finished) {
@@ -142,12 +150,15 @@
 
 - (void)startContentViewAnimImmediately
 {
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-self.bounds.size.height - 20, self.bounds.size.width, self.bounds.size.height);
-        self.alpha = 0;
-    } completion:^(BOOL finished) {
-        [self clearSelf];
-    }];
+    if (self.isAnimStarted == NO) {
+        [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(startContentViewAnim) object:nil];
+        [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-self.bounds.size.height - 20, self.bounds.size.width, self.bounds.size.height);
+            self.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self clearSelf];
+        }];
+    }
 }
 
 - (void)dealloc
