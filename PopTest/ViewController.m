@@ -11,7 +11,7 @@
 
 @interface ViewController ()
 
-//@property (strong, nonatomic) PopTestView *contentView;
+@property (strong, nonatomic) PopTestView *contentView;
 
 @end
 
@@ -31,11 +31,20 @@
 
 - (void)statAnim
 {
-//    if (self.contentView == nil) {
+    if (self.contentView == nil) {
         PopTestView *contentView = [[PopTestView alloc] init];
         [self.view addSubview:contentView];
-//    }
-    [contentView startAnim];
+        [contentView startAnim];
+        self.contentView = contentView;
+    }else
+    {
+        [self.contentView startContentViewAnimImmediately];
+        self.contentView = nil;
+        PopTestView *contentView = [[PopTestView alloc] init];
+        [self.view addSubview:contentView];
+        [contentView startAnim];
+        self.contentView = contentView;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

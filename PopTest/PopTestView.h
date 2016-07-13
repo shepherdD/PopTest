@@ -15,5 +15,6 @@
 @property (strong, nonatomic) UILabel *countLabel;
 
 - (void)startAnim;
+- (void)startContentViewAnimImmediately;
 
 @end

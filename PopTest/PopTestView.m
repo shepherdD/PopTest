@@ -33,7 +33,7 @@
 
 - (void)initUI
 {
-    self.frame = CGRectMake(UI_SCREEN_WIDTH-145-4, 269, 145, 48);
+    self.frame = CGRectMake(UI_SCREEN_WIDTH-145-4, 344, 145, 48);
     self.bgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.bgBtn setFrame:CGRectMake(20, 8, 125, 40)];
     UIImage *bgImage = [UIImage imageNamed:@"222.png"];
@@ -138,6 +138,16 @@
 - (void)clearSelf
 {
     [self removeFromSuperview];
+}
+
+- (void)startContentViewAnimImmediately
+{
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-self.bounds.size.height - 20, self.bounds.size.width, self.bounds.size.height);
+        self.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self clearSelf];
+    }];
 }
 
 - (void)dealloc
